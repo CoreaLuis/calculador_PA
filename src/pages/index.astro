@@ -23,20 +23,19 @@ import styles from ".styles.css";
 	<body>
 		<div class="container">
 			<div class="row mt-5">
+				<h2 class="text-center">
+					Nuestra calculadora le ayudará a calcular la cuota de su
+					préstamo para compra de vehículo
+				</h2>
 				<!-- Sección Izquierda -->
-				<div class="col-lg-6">
-					<h2 class="text-center">
-						Nuestra calculadora le ayudará a calcular la cuota de su
-						préstamo para compra de vehículo
-					</h2>
-					<br>
-					<h4 class="text-start">
-						Información Personal
-					</h4>
+				<div class="col-lg-6 card">
 					<div class="row mt-5">
+						<h4 class="text-start">Información Personal</h4>
 						<div class="col-md-6">
 							<div class="input-group mb-3">
-								<span class="input-group-text">Fecha de Nacimiento</span>
+								<span class="input-group-text"
+									>Fecha de Nacimiento</span
+								>
 								<input
 									type="date"
 									class="form-control"
@@ -44,9 +43,7 @@ import styles from ".styles.css";
 								/>
 							</div>
 						</div>
-						<h4 class="text-start">
-							Información Crédito
-						</h4>
+						<h4 class="text-start">Información Crédito</h4>
 						<div class="col-md-6">
 							<div class="input-group mb-3">
 								<span class="input-group-text">$</span>
@@ -58,7 +55,7 @@ import styles from ".styles.css";
 							</div>
 						</div>
 					</div>
-		
+
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<div class="dropdown">
@@ -94,7 +91,7 @@ import styles from ".styles.css";
 							</div>
 						</div>
 					</div>
-		
+
 					<div class="row mt-3">
 						<div class="col-md-12">
 							<div class="dropdown">
@@ -148,28 +145,22 @@ import styles from ".styles.css";
 							</div>
 						</div>
 					</div>
+					<!-- Botón "Calcular" -->
+					<div class="row mt-3">
+						<div class="col-md-12">
+							<button
+								type="button"
+								class="btn btn-outline-success btn-block btn-square"
+							>
+								Calcular
+							</button>
+						</div>
+					</div>
 				</div>
-		
 				<!-- Sección Derecha -->
-				<div class="col-lg-6">
+				<div class="col-lg-6 card">
 					<!-- Contenido opcional en la sección derecha -->
-				</div>
-			</div>
-		
-			<!-- Botón "Calcular" -->
-			<div class="row mt-3">
-				<div class="col-md-12">
-					<button type="button" class="btn btn-outline-success btn-block btn-square">
-						Calcular
-					</button>
-				</div>
-			</div>
-		</div>
-		
-				<!-- Sección Derecha -->
-				<div class="col-lg-6">
-					<!-- Contenido opcional en la sección derecha -->
-					<h5>Respuesta</h5>
+					<h2>Respuesta</h2>
 				</div>
 			</div>
 		</div>
