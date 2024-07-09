@@ -1,4 +1,4 @@
-console.log("Probando")
+console.log("Probando Calculos")
 // Solicitar día de nacimiento
 var day = prompt("Ingresa el día de tu nacimiento (1-31):");
 // Convertir a número entero
@@ -36,3 +36,26 @@ if (currentMonth < month || (currentMonth === month && currentDay < day)) {
 
 // Mostrar la edad
 console.log("Tu edad es: " + age + " años.");
+
+
+// Solicitar precio de venta
+var precioVenta = prompt("Ingresa el precio de venta:");
+
+// Convertir a número flotante
+precioVenta = parseFloat(precioVenta);
+
+// Solicitar abono dado
+var abono = prompt("Ingresa el abono que dará el cliente:");
+
+// Convertir a número flotante
+abono = parseFloat(abono);
+
+// Calcular saldo restante
+var cpp = precioVenta - abono;
+
+// Mostrar el saldo restante
+console.log("CPP: " + cpp.toFixed(2));
+
+
+//Detalles de la letra
+console.log("Detalle de la Letra")
