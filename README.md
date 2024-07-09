@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Astro Project: By Luis Corea
 
 ```sh
 npm create astro@latest -- --template minimal
