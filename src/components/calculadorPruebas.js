@@ -1,4 +1,5 @@
-console.log("Probando Calculos")
+console.log("Probando Calculos");
+
 function calcularEdad() {
     const day = parseInt(prompt("Ingresa el día de tu nacimiento (1-31):"), 10);
     const month = parseInt(prompt("Ingresa el mes de tu nacimiento (1-12):"), 10);
@@ -41,7 +42,7 @@ const resultadoSeguro = calculoSeguroVida(edad);
 console.log(`El resultado de Seguro de vida para la edad ${edad} es: ${resultadoSeguro}`);
 console.log("--------------------");
 
-//calculo de tazas de interes
+// Función para calcular la tasa de interés
 function calcularTasa(abono, precioVenta) {
     // Convertir abono y precioVenta a números flotantes
     abono = parseFloat(abono);
@@ -61,7 +62,7 @@ function calcularTasa(abono, precioVenta) {
         return 0; // Porcentaje fuera de los rangos especificados
     }
 }
-//Calculo de CPP
+
 // Solicitar precio de venta
 var precioVenta = prompt("Ingresa el precio de venta: $");
 
@@ -74,29 +75,19 @@ var abono = prompt("Ingresa el abono que dará el cliente: $");
 // Convertir a número flotante
 abono = parseFloat(abono);
 
-// Calcular saldo restante
+// Calcular CPP (Costo de Propiedad del Cliente)
 var cpp = precioVenta - abono;
 
-// Calcular el porcentaje del abono respecto al precio de venta
+// Mostrar porcentaje del abono
 var porcentajeAbono = (abono / precioVenta) * 100;
-
-// Mostrar el porcentaje del abono
 console.log("El abono dado representa el " + porcentajeAbono.toFixed(2) + "% del precio de venta.");
 console.log("--------------------");
 
-// Mostrar el saldo restante
-console.log("CPP: " + "$" + cpp.toFixed(2));
-//integrando la funcion
-var tasa = calcularTasa(abono, precioVenta);
-
-console.log("La tasa aplicable es: " + tasa.toFixed(2) + "%");
+// Mostrar CPP
+console.log("CPP: $" + cpp.toFixed(2));
 console.log("--------------------");
 
-
-//Detalles de la letra
-console.log("DETALLE DE LA LETRA")
-console.log("--------------------");
-
+// Función para detalles de gastos de cierre
 function detallesGastosCierre() {
     console.log("DETALLES GASTOS DE CIERRE");
     console.log("GASTOS LEGALES");
@@ -117,13 +108,34 @@ function detallesGastosCierre() {
     // Calcular la comisión por desembolso y el ITBMS
     var comisionDesembolso = (cpp * prcComisionDesembolso) + bono;
     var ITBMS = (cpp * prcComisionDesembolso) * prcSiete;
+    //const timbres = Math.ceil(montoPrestamo() * 0.1);
+    const timbres = 14.30
     console.log("Comision por Desembolso: $" + comisionDesembolso.toFixed(2));
     console.log("ITBMS: $" + ITBMS.toFixed(2));
 
     // Calcular el total de gastos de cierre
-    var total = fiduciaria + otrosGastosLegales + tarTraspaso + comisionDesembolso + ITBMS;
-    console.log("TOTAL: $" + total.toFixed(2));
+    var totalGastosCierre = fiduciaria + otrosGastosLegales + tarTraspaso + timbres + comisionDesembolso + ITBMS;
+    console.log("TOTAL GASTOS DE CIERRE: $" + totalGastosCierre.toFixed(2));
+
+    return totalGastosCierre;
 }
 
-// Llamar a la función para ejecutar el código
-detallesGastosCierre();
+// Llamar a la función para mostrar los detalles de gastos de cierre
+//detallesGastosCierre();
+//console.log("--------------------");
+
+// Función para calcular el monto del préstamo
+function montoPrestamo() {
+    // Obtener el total de gastos de cierre desde la función detallesGastosCierre
+    var detalleGastosCierre = detallesGastosCierre();
+
+    // Sumar el CPP con el detalle de gastos de cierre
+    var montoPrestamo = cpp + detalleGastosCierre;
+
+    return montoPrestamo;
+}
+
+// Llamar a la función para calcular el monto del préstamo
+var monto = montoPrestamo();
+console.log("El monto del préstamo es: $" + monto.toFixed(2));
+console.log("--------------------");
